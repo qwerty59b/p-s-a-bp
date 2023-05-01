@@ -63,9 +63,11 @@ else:
 	logger.warning("Not using uvloop. Low performance loop activated.")
 del(use_uvloop)
 # Initialize bot
-app = Client("my_bot", session_name=SESSION_NAME)
 SESSION_NAME: str = os.getenv("SESSION_NAME")
 CHAT: str = os.getenv("CHAT")
+
+app = Client("my_bot", session_string=SESSION_NAME)	
+	
 logger.info("Bot started!")
 
 
